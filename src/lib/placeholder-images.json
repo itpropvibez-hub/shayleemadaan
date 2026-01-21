@@ -1,0 +1,46 @@
+{
+  "placeholderImages": [
+    {
+      "id": "shaylee-hero",
+      "description": "Shaylee in a professional setting",
+      "imageUrl": "/assets/finalprofile.png",
+      "imageHint": "professional woman"
+    },
+    {
+      "id": "project-1",
+      "description": "Modern Luxury Villa",
+      "imageUrl": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleHRlcmlvciUyMG1vZGVybiUyMGhvdXNlfGVufDB8fHx8MTcyMTgyMDAyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern house"
+    },
+    {
+      "id": "project-2",
+      "description": "Downtown Apartment Complex",
+      "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxleHRlcmlvciUyMG1vZGVybiUyMGhvdXNlfGVufDB8fHx8MTcyMTgyMDAyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "apartment building"
+    },
+    {
+      "id": "project-3",
+      "description": "Suburban Family Home",
+      "imageUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxleHRlcmlvciUyMG1vZGVybiUyMGhvdXNlfGVufDB8fHx8MTcyMTgyMDAyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "suburban house"
+    },
+    {
+      "id": "blog-1",
+      "description": "Delhi NCR Market Trends",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwbWFya2V0fGVufDB8fHx8MTcyMTgyMDEwMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "real estate market"
+    },
+    {
+      "id": "blog-2",
+      "description": "Top 5 Investment Tips",
+      "imageUrl": "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwaW52ZXN0bWVudHxlbnwwfHx8fDE3MjE4MjAxMDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "real estate investment"
+    },
+    {
+      "id": "blog-3",
+      "description": "Common Buyer Mistakes to Avoid",
+      "imageUrl": "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwYnV5ZXJ8ZW58MHx8fHwxNzIxODIwMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "real estate buyer"
+    }
+  ]
+}
