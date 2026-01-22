@@ -40,23 +40,22 @@ export default function ContactSection1() {
   const selectedTypes = watch("propertyPlan");
 
   const onSubmit = async (data: any) => {
-    setIsSubmitting(true);
-    const formData = new FormData();
-    // No need to stringify everything if we handle it in the action, 
-    // but keeping your logic compatible:
-    Object.keys(data).forEach(key => {
-      formData.append(key, typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key]);
-    });
-    
-    const result = await submitCallbackForm(formData);
-    if (result.success) {
-      alert("Enquiry sent successfully to our team!");
-      reset();
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
-    setIsSubmitting(false);
-  };
+  setIsSubmitting(true);
+  const formData = new FormData();
+  
+  Object.keys(data).forEach(key => {
+    formData.append(key, typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key]);
+  });
+  
+  const result = await submitCallbackForm(formData);
+  if (result.success) {
+    setIsModalOpen(true); // This opens the SuccessModal component
+    reset();
+  } else {
+    alert("Error: " + (result.error || "Please check your connection."));
+  }
+  setIsSubmitting(false);
+};
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-background border rounded-xl shadow-sm space-y-8">
