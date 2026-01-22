@@ -16,7 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
-import { submitCallbackForm } from "@/app/actions/submit-callback"; // We will create this
+// import { submitCallbackForm } from "@/app/actions/submit-callback"; // We will create this
 
 const propertyTypes = ["Residential", "Commercial", "Industrial", "Land"];
 
@@ -28,16 +28,16 @@ export default function ContactSection() {
   const hours = Array.from({ length: 12 }, (_, i) => i + 9); // 9 AM to 8 PM
   const selectedTypes = watch("propertyPlan") || [];
 
-  const onSubmit = async (data: any) => {
-    const formData = new FormData();
-    Object.keys(data).forEach(key => formData.append(key, JSON.stringify(data[key])));
+  // const onSubmit = async (data: any) => {
+  //   const formData = new FormData();
+  //   Object.keys(data).forEach(key => formData.append(key, JSON.stringify(data[key])));
     
-    const result = await submitCallbackForm(formData);
-    if (result.success) {
-      alert("Request sent successfully!");
-      setOpen(false);
-    }
-  };
+  //   const result = await submitCallbackForm(formData);
+  //   if (result.success) {
+  //     alert("Request sent successfully!");
+  //     setOpen(false);
+  //   }
+  // };
 
   return (
     <div className="space-y-12">

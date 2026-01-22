@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
-import { submitCallbackForm } from "@/app/actions/submit-callback";
+// import { submitCallbackForm } from "@/app/actions/submit-callback";
 import { SuccessModal } from "./successmodal";
 
 const propertyTypes = ["Residential", "Commercial", "Land"];
@@ -39,22 +39,34 @@ export default function ContactSection1() {
   
   const selectedTypes = watch("propertyPlan");
 
-  const onSubmit = async (data: any) => {
+const onSubmit = async (data: any) => {
   setIsSubmitting(true);
-  const formData = new FormData();
   
+  const formData = new FormData();
   Object.keys(data).forEach(key => {
+    // Stringify objects/arrays so the backend can parse them easily
     formData.append(key, typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key]);
   });
   
-  const result = await submitCallbackForm(formData);
-  if (result.success) {
-    setIsModalOpen(true); // This opens the SuccessModal component
-    reset();
-  } else {
-    alert("Error: " + (result.error || "Please check your connection."));
+  try {
+    const response = await fetch('/api/callback', {
+      method: 'POST',
+      body: formData, // Send the FormData directly
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      setIsModalOpen(true);
+      reset();
+    } else {
+      alert("Error: " + (result.error || "Failed to send."));
+    }
+  } catch (err) {
+    alert("Network error. Please try again.");
+  } finally {
+    setIsSubmitting(false);
   }
-  setIsSubmitting(false);
 };
 
   return (
