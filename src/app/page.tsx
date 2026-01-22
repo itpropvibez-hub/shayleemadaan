@@ -27,38 +27,54 @@ export default function HomePage() {
       <Header />
       <main className="flex-grow">
 
-        {/* Hero Section */}
-        <section id="home" className="relative h-[80vh] min-h-[600px] w-full text-white">
-          <div className="absolute inset-0 bg-black/50 z-10" />
-            {shayleeHero && (
-                <Image
-                    src={shayleeHero.imageUrl}
-                    alt={shayleeHero.description}
-                    fill
-                    className="object-cover object-center w-full min-h-full"
-                    data-ai-hint={shayleeHero.imageHint}
-                    priority
-                />
-            )}
-          <div className="container relative z-20 flex flex-col items-start justify-center h-full mx-auto px-4 text-left">
-            <div className='flex fex-row space-x-6'>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight font-handwriting mt-2 mb-6">
-             Guiding your 
-            </h1>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight font-handwriting mt-2 mb-6 text-[#cfa34c]">
-             right move.
-            </h1></div>
-            {/* <p className="text-2xl md:text-3xl lg:text-4xl font-handwriting text-accent mt-2 mb-6">
-               Guiding your right move.
-            </p> */}
-            <p className="max-w-xl text-lg text-white/80 mb-10 leading-relaxed">
-              With a decade of experience, I provide clarity and confidence in your property journey. Let's build your future, together.
-            </p>
-            <Button asChild size="lg" className="bg-[#023e2f] text-primary-foreground hover:bg-white/80 hover:text-[#023e2f] group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 py-7 px-10 text-lg">
-                <Link href="#contact">Book a Free Consultation <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" /></Link>
-            </Button>
-          </div>
-        </section>
+       {/* Hero Section */}
+<section id="home" className="relative h-[85vh] min-h-[500px] md:h-[80vh] w-full text-white overflow-hidden">
+  {/* The Overlay - Ensuring text is readable on all screen sizes */}
+  <div className="absolute inset-0 bg-black/40 sm:bg-black/50 z-10" />
+  
+  {shayleeHero && (
+    <Image
+      src={shayleeHero.imageUrl}
+      alt={shayleeHero.description}
+      fill
+      priority
+      // 'sizes' tells the browser which image size to download
+      sizes="100vw" 
+      className="object-cover object-[70%_center] md:object-[70%_center] lg:object-center z-0 transition-opacity duration-500"
+      data-ai-hint={shayleeHero.imageHint}
+    />
+  )}
+{/* Container: justify-end moves content to the bottom, items-start keeps it left */}
+  <div className="container relative z-20 flex flex-col items-start justify-end h-full mx-auto px-6 pb-16 md:pb-24 text-left">
+    
+    {/* Headline Stack */}
+    <div className='flex flex-col-2 space-x-2 mb-4 '>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-handwriting max-[380px]:text-3xl">
+        Guiding your 
+      </h1>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-handwriting text-[#cfa34c] max-[380px]:text-3xl">
+        right move.
+      </h1>
+    </div>
+
+    {/* Subtext */}
+    <p className="max-w-md md:max-w-xl text-base sm:text-lg text-white/90 mb-8 md:mb-10 leading-tight">
+      With a decade of experience, I provide clarity and confidence in your property journey. Let's build your future, together.
+    </p>
+
+    {/* Button */}
+    <Button 
+      asChild 
+      size="lg" 
+      className="w-full sm:w-auto bg-[#023e2f] text-primary-foreground hover:bg-white/80 hover:text-[#023e2f] group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 py-3 md:py-7 px-3 md:px-10 text-lg"
+    >
+      <Link href="#contact" className="flex items-center justify-center">
+        Book a Free Consultation 
+        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+      </Link>
+    </Button>
+  </div>
+</section>
 
         {/* About Section */}
         <section id="about" className="py-24 bg-secondary/30">
@@ -189,7 +205,7 @@ export default function HomePage() {
             <Card className="max-w-4xl mx-auto p-4 md:p-8 lg:p-12 shadow-2xl bg-background border-border/20">
                 <div className="text-center mb-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#023e2f]">Let's Talk Real Estate</h2>
-                    <p className="mt-2 text-sm text-foreground/70 max-w-2xl mx-auto">Ready to make your next move? Fill out the form below or reach out directly. <br />Your journey to the perfect property starts here.</p>
+                    <p className="mt-2 text-sm text-foreground/70 max-w-2xl mx-auto">Ready to make your next move? Fill out the form below or reach out directly. Your journey to the perfect property starts here.</p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div>

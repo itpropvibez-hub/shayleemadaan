@@ -83,7 +83,7 @@ export default function ContactSection1() {
                   {errors.phone && <p className="text-xs text-red-500">{errors.phone.message as string}</p>}
                 </div>
             {/* Email Field */}
-                    <div className="space-y-1  md:col-span-2">
+                    <div className="space-y-1 col-span-2 ">
                       <Input 
                         {...register("email", { 
                           required: "Email is required",
