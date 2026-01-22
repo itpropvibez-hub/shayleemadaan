@@ -51,7 +51,7 @@ export async function submitCallbackForm(formData: FormData) {
 
     await transporter.sendMail({
       from: `"Lead generated" <${process.env.EMAIL_USER}>`,
-      to: "shailyrealtorlife@gmail.com", // The recipient address you requested
+      to: "abhay240103@gmail.com", // The recipient address you requested
       replyTo: rawData.email, // Allows you to just hit 'Reply' in Gmail
       subject: `🚀 New Lead: ${rawData.name}`,
       html: htmlBody,
