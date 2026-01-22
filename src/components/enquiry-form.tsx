@@ -30,7 +30,7 @@ export default function ContactSection1() {
     name: "",
     email: "",
     phone: "",
-    propertyPlan: [],
+    propertyPlan: [] as string[],
     timeSlot: "3 PM",
     budget: "",
     remarks: ""
@@ -118,14 +118,16 @@ export default function ContactSection1() {
                     id={type}
 
                     onCheckedChange={(checked) => {
+  // Ensure we start with an array even if it's currently null/undefined
+  const current = selectedTypes || []; 
+  
+  const next = checked 
+    ? [...current, type] 
+    : current.filter((t: string) => t !== type);
 
-                      const current = selectedTypes;
-
-                      const next = checked ? [...current, type] : current.filter((t: string) => t !== type);
-
-                      setValue("propertyPlan", next);
-
-                    }}
+  // Set the value and tell the form it's "dirty" so it validates
+  setValue("propertyPlan", next, { shouldValidate: true, shouldDirty: true });
+}}
 
                   />
 
