@@ -27,7 +27,7 @@ export async function submitCallbackForm(formData: FormData) {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-    });
+    }); 
 
     // Constructing the HTML Table safely
     const tableRows = Object.entries(rawData)
