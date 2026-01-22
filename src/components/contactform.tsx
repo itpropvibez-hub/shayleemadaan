@@ -6,17 +6,16 @@ import { ArrowRight, Check } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Textarea } from "@/components/ui/textarea";
-// import { submitCallbackForm } from "@/app/actions/submit-callback"; // We will create this
+// import {
+//   Dialog,
+//   DialogContent,
+//   DialogHeader,
+//   DialogTitle,
+//   DialogTrigger,
+// } from "@/components/ui/dialog";
+// import { Input } from "@/components/ui/input";
+// import { Checkbox } from "@/components/ui/checkbox";
+// import { Textarea } from "@/components/ui/textarea";
 
 const propertyTypes = ["Residential", "Commercial", "Industrial", "Land"];
 
@@ -27,17 +26,6 @@ export default function ContactSection() {
   // Logic for Time Slots
   const hours = Array.from({ length: 12 }, (_, i) => i + 9); // 9 AM to 8 PM
   const selectedTypes = watch("propertyPlan") || [];
-
-  // const onSubmit = async (data: any) => {
-  //   const formData = new FormData();
-  //   Object.keys(data).forEach(key => formData.append(key, JSON.stringify(data[key])));
-    
-  //   const result = await submitCallbackForm(formData);
-  //   if (result.success) {
-  //     alert("Request sent successfully!");
-  //     setOpen(false);
-  //   }
-  // };
 
   return (
     <div className="space-y-12">

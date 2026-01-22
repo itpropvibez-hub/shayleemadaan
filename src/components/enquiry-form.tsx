@@ -9,7 +9,6 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
-// import { submitCallbackForm } from "@/app/actions/submit-callback";
 import { SuccessModal } from "./successmodal";
 
 const propertyTypes = ["Residential", "Commercial", "Land"];
@@ -115,23 +114,16 @@ const onSubmit = async (data: any) => {
           {/* Property Checkboxes */}
 
           <div className="space-y-3 md:col-span-2">
-
             <p className="text-sm font-semibold">Property Interest</p>
-
             <div className="flex flex-wrap gap-4">
-
               {propertyTypes.map((type) => (
-
                 <div key={type} className="flex items-center space-x-2">
-
                   <Checkbox
-
                     id={type}
-
                     onCheckedChange={(checked) => {
   // Ensure we start with an array even if it's currently null/undefined
   const current = selectedTypes || []; 
-  
+
   const next = checked 
     ? [...current, type] 
     : current.filter((t: string) => t !== type);
