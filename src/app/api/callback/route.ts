@@ -3,10 +3,8 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
   try {
+    // 1. Check for form data safely
     const formData = await req.formData();
-if (!formData) {
-  return NextResponse.json({ error: "No form data provided" }, { status: 400 });
-}
     const rawData: Record<string, any> = {};
 
     formData.forEach((value, key) => {
@@ -22,17 +20,29 @@ if (!formData) {
       }
     });
 
+    // 2. FIX: Use a single config object for the transporter
+    // Using host/port is more stable in production than service: "gmail"
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, // Use SSL for port 465
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        pass: process.env.EMAIL_PASS, // This MUST be an App Password, not your login password
       },
     });
 
+    // 3. Verify connection before sending (Crucial for debugging production)
+    try {
+      await transporter.verify();
+    } catch (authError) {
+      console.error("Transporter Auth Error:", authError);
+      return NextResponse.json({ success: false, error: "Email Authentication Failed" }, { status: 500 });
+    }
+
     const formatKey = (key: string) => 
       key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase());
-
+    
     // Table rows for the Admin notification
     const tableRows = Object.entries(rawData)
       .map(([key, value]) => {
