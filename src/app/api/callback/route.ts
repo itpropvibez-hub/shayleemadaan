@@ -4,6 +4,9 @@ import nodemailer from "nodemailer";
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
+if (!formData) {
+  return NextResponse.json({ error: "No form data provided" }, { status: 400 });
+}
     const rawData: Record<string, any> = {};
 
     formData.forEach((value, key) => {
@@ -46,8 +49,9 @@ export async function POST(req: NextRequest) {
     const replyToEmail = rawData.email || "";
     
     const querySummary = Object.entries(rawData)
-      .map(([key, value]) => `• ${formatKey(key)}: ${value}`)
-      .join("\n");
+  .filter(([key]) => !['id', 'token', 'priority'].includes(key.toLowerCase())) // Filter out noise
+  .map(([key, value]) => `• ${formatKey(key)}: ${value}`)
+  .join("\n");  
 
     const emailSubject = `Personal Note: Your Inquiry with ShailyMadaan`;
     // calender invite : If yes, you can grab a time that works for you on my calendar here: [Link].
