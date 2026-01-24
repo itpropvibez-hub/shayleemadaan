@@ -10,15 +10,9 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="md:col-span-2 flex flex-col items-start">
             <Link href="/" className="flex items-center gap-3 group mb-6">
-              {/* Logo Placeholder - Replace 'src' with your logo path */}
-              {/* <div className="relative w-10 h-10 bg-accent rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"> */}
-                <div className="relative w-60 min-h-32 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                {/* <span className="text-foreground font-bold text-xl">S</span>  */}
+               <div className="relative w-60 min-h-32 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                 <Image src="/assets/logo.jpeg" alt="Shaylee Logo" fill className="object-contain" />
               </div>
-              {/* <span className="text-3xl font-bold text-background tracking-tight font-handwriting">
-                Shaylee
-              </span> */}
             </Link>
             <p className="text-background/60 max-w-sm leading-relaxed text-sm lg:text-base">
                 Helping you fall in love with where you live. Your goals, your timeline, and a little bit of magic to get you home.
@@ -55,7 +49,6 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-2 text-xs text-background/40">
             <span>Built with passion.</span>
-            {/* <span className="text-accent animate-pulse">❤️</span> */}
           </div>
         </div>
       </div>

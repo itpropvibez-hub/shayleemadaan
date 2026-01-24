@@ -78,7 +78,7 @@ const onSubmit = async (data: any) => {
 
         <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-4 md:col-span-2">
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+            <div className="space-y-2 md:grid grid-cols-2 gap-4">
                 {/* Name Field */}
                     <div className="space-y-1">
                       <Input 
