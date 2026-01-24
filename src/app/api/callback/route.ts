@@ -71,7 +71,7 @@ shailymadaan.com`;
 
     await transporter.sendMail({
       from: `"PropVibez" <${process.env.EMAIL_USER}>`,
-      to: "abhay240103@gmail.com",
+      to: "shailyrealtorlife@gmail.com",
       subject: `New Client Inquiry: ${rawData.name || ""}`,
       html: `
         <!DOCTYPE html>
